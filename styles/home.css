@@ -1,4 +1,4 @@
-.content {
+.content{
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 11.4rem 1fr;
@@ -6,43 +6,89 @@
     grid-template-areas: 
     'header header'
     'left right'
-    ;
 }
 
-header {
+header{
     grid-area: header;
 }
 
-#bg {
+#bg{
     grid-area: left;
+
     background: url('/assets/home-bg-img.svg') no-repeat top/contain;
 }
 
-main {
+main{
     grid-area: right;
 
     display: flex;
     align-items: center;
 }
 
-main .container {
+main .container{
     width: min(36.3rem 100%);
 }
 
-main h2 {
-    font-family: var(--font-2);
-    font-size: (20px, 5vw, 2.8rem);
+main h2{
+    font-family: 'Poppins', sans-serif;
     color: var(--black);
-    font-weight: 700;
+    font-size: clamp(20px, 5vw, 2.8rem);
     margin-bottom: 2.4rem;
 }
 
-input {
-    border: 0.2rem solid var(--grey-blue);
+input{
+    border: .2rem solid var(--grey-blue);
     padding: 0 1.6rem;
 }
 
-input, button, .button {
+input, button, .button{
     width: 100%;
     margin-bottom: 1.8rem;
+}
+/* separator line */
+
+.separator {
+    display: flex;
+    align-items: center;
+
+    margin: 4rem 0;
+
+}
+.separator div:nth-child(2) {
+    color: var(--grey-blue);
+    font-family: var(--font-2);
+    font-weight: 400;
+    padding: 0 1.35rem;
+    line-height: 0;
+}
+.separator div:nth-child(1),
+.separator div:nth-child(3) {
+    background: var(--grey-blue);
+    width: 100%;
+    height: 1px;
+}
+
+/*** create balls ***/
+
+.ball {
+    
+    clip-path: circle(50% at 50% 50%);
+    position: fixed;
+    background: var(--blue);
+    opacity: 0.1;
+    width: 21.2rem;
+    height: 21.2rem;
+}
+
+.ball.top {
+    top: -46rem;
+    right: -35rem;
+    width: 63.3rem;
+    height: 63.3rem;
+}
+
+.ball.bottom {
+    right: -15rem;
+    bottom: 5.6rem;
+    
 }
